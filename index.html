@@ -332,6 +332,39 @@ footer{
 <footer>
   © 2026 LOCORA — Find Local. Shop Local.
 </footer>
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbyltNwcvKca5f0rgY7vrBUfQISFVpK51yt-GjlpB_vyIfE08qTMQ77Zd8jPMYKBI3Q/exec";
 
+fetch(API_URL)
+  .then(response => response.json())
+  .then(shops => {
+    const section = document.createElement("section");
+
+    section.innerHTML = `
+      <h2>Local Shops</h2>
+      <div class="grid" id="shop-list"></div>
+    `;
+
+    document.body.insertBefore(section, document.querySelector("footer"));
+
+    const list = document.getElementById("shop-list");
+
+    shops.forEach(shop => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <h3>${shop["Owner name"] || "Local Shop"}</h3>
+        <p>📍 ${shop["Shop Address"] || ""}</p>
+        <p>🛍️ ${shop["Product/Services"] || ""}</p>
+      `;
+
+      list.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.log(error);
+  });
+</script>
 </body>
 </html>
