@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOCORA — Find Local. Shop Local.</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f6f7fb;
+  color:#222;
+}
+
+header{
+  background:#ffffff;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:800;
+  color:#111;
+}
+
+.logo span{
+  color:#ff6b00;
+}
+
+.header-btn{
+  text-decoration:none;
+  background:#ff6b00;
+  color:white;
+  padding:11px 18px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.hero{
+  text-align:center;
+  padding:65px 20px;
+  background:linear-gradient(135deg,#fff7ef,#ffffff);
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.hero h1 span{
+  color:#ff6b00;
+}
+
+.hero p{
+  font-size:18px;
+  color:#666;
+  margin-bottom:25px;
+}
+
+.search{
+  max-width:600px;
+  margin:auto;
+  display:flex;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 4px 18px rgba(0,0,0,.1);
+  overflow:hidden;
+}
+
+.search input{
+  flex:1;
+  padding:16px;
+  border:0;
+  outline:0;
+  font-size:16px;
+}
+
+.search button{
+  border:0;
+  background:#ff6b00;
+  color:white;
+  padding:0 22px;
+  font-weight:bold;
+}
+
+section{
+  padding:45px 6%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:28px;
+  font-size:28px;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  max-width:900px;
+  margin:auto;
+}
+
+.category{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+  cursor:pointer;
+  transition:.2s;
+}
+
+.category:hover{
+  transform:translateY(-3px);
+}
+
+.category .icon{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.shops{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.shop{
+  background:white;
+  padding:22px;
+  border-radius:15px;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.shop h3{
+  margin-bottom:8px;
+}
+
+.shop p{
+  color:#666;
+  margin:6px 0;
+}
+
+.shop .tag{
+  display:inline-block;
+  background:#fff0e5;
+  color:#ff6b00;
+  padding:5px 9px;
+  border-radius:7px;
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.shop a{
+  display:inline-block;
+  margin-top:12px;
+  text-decoration:none;
+  color:#ff6b00;
+  font-weight:bold;
+}
+
+.add-shop{
+  text-align:center;
+  background:#111;
+  color:white;
+  border-radius:18px;
+  padding:45px 20px;
+}
+
+.add-shop p{
+  color:#ccc;
+  margin:10px 0 22px;
+}
+
+.main-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#ff6b00;
+  color:white;
+  padding:14px 24px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#777;
+  background:white;
+  margin-top:35px;
+}
+
+@media(max-width:700px){
+  .hero h1{
+    font-size:32px;
+  }
+
+  .categories,
+  .shops{
+    grid-template-columns:1fr;
+  }
+
+  header{
+    padding:15px 4%;
+  }
+
+  .header-btn{
+    padding:9px 12px;
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">LOCO<span>RA</span></div>
+
+  <a class="header-btn"
+     href="https://docs.google.com/forms/d/e/1FAIpQLSeSIZQIU_M-rHUVtAsUxXNRCDA1NjWqgJCXIwksCQBzpK9mzw/viewform?usp=publish-editor">
+     Add Your Shop
+  </a>
+</header>
+
+<section class="hero">
+  <h1>Find <span>Local.</span> Shop Local.</h1>
+  <p>Your Local Market, One Tap Away</p>
+
+  <div class="search">
+    <input type="text" placeholder="Search shops, products or services...">
+    <button>Search</button>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Explore Categories</h2>
+
+  <div class="categories">
+
+    <div class="category">
+      <div class="icon">🛒</div>
+      <h3>Grocery</h3>
+    </div>
+
+    <div class="category">
+      <div class="icon">👕</div>
+      <h3>Fashion</h3>
+    </div>
+
+    <div class="category">
+      <div class="icon">📱</div>
+      <h3>Electronics</h3>
+    </div>
+
+    <div class="category">
+      <div class="icon">🍔</div>
+      <h3>Food</h3>
+    </div>
+
+    <div class="category">
+      <div class="icon">🏠</div>
+      <h3>Home</h3>
+    </div>
+
+    <div class="category">
+      <div class="icon">🚗</div>
+      <h3>Auto</h3>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Featured Local Shops</h2>
+
+  <div class="shops">
+
+    <div class="shop">
+      <span class="tag">Grocery</span>
+      <h3>Sharma General Store</h3>
+      <p>📍 Local Market</p>
+      <p>Daily groceries & household items</p>
+      <a href="#">View Shop →</a>
+    </div>
+
+    <div class="shop">
+      <span class="tag">Fashion</span>
+      <h3>City Fashion</h3>
+      <p>📍 Main Market</p>
+      <p>Clothing & fashion products</p>
+      <a href="#">View Shop →</a>
+    </div>
+
+    <div class="shop">
+      <span class="tag">Electronics</span>
+      <h3>Digital Point</h3>
+      <p>📍 City Center</p>
+      <p>Mobiles, accessories & electronics</p>
+      <a href="#">View Shop →</a>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="add-shop">
+    <h2>Apni Shop LOCORA par Add Karein 🏪</h2>
+    <p>Nearby customers ko apni shop discover karne dein.</p>
+
+    <a class="main-btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSeSIZQIU_M-rHUVtAsUxXNRCDA1NjWqgJCXIwksCQBzpK9mzw/viewform?usp=publish-editor">
+       Add Your Shop
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 LOCORA — Find Local. Shop Local.
+</footer>
+
+</body>
+</html>
